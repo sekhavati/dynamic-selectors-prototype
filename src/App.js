@@ -4,13 +4,16 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import './App.css';
-import propositionReducer from './proposition/reducers/proposition';
+import propositions from './proposition/reducers/proposition';
 import PropositionContainer from './proposition/containers/PropositionContainer';
-//import fetchProposition from './proposition/actions/fetch-proposition';
+import { combineReducers } from 'redux'
+// import fetchProposition from './proposition/actions/fetch-proposition';
 
 const store = createStore(
-  propositionReducer,
-  {},
+  combineReducers({
+    propositions
+  }),
+  { },
   composeWithDevTools(
     applyMiddleware(thunk)
   )

@@ -9,9 +9,15 @@ const fetchProposition = context => dispatch => {
   .then(() => {
       switch(context) {
         case 'SPORTS':
-          return 'A lovely sports 3 pack!';
+          return {
+            proposition: 'A lovely sports 3 pack!',
+            context
+          };
         case 'CINEMA':
-          return 'Stunning Sky Cinema in full glory!';
+          return {
+            proposition: 'Stunning Sky Cinema in full glory!',
+            context
+          }
         default:
           throw new Error('Unknown context supplied to fetchProposition');
       }
