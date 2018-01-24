@@ -1,8 +1,6 @@
 import { createSelector } from 'reselect';
 
-const getProposition = (state, props) => {
-  return { displayName: state.proposition[props.context] };
-};
+const getProposition = (state, props) => ({ displayName: state.proposition[props.context] });
 
 // *** Noteworthy
 const makeGetProposition = () => {
