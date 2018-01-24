@@ -4,14 +4,14 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import './App.css';
-import propositions from './proposition/reducers/proposition';
+import proposition from './proposition/reducers/proposition';
 import PropositionContainer from './proposition/containers/PropositionContainer';
 import { combineReducers } from 'redux'
 // import fetchProposition from './proposition/actions/fetch-proposition';
 
 const store = createStore(
   combineReducers({
-    propositions
+    proposition
   }),
   { },
   composeWithDevTools(

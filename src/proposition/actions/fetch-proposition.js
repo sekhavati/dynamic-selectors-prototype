@@ -11,12 +11,12 @@ const fetchProposition = context => dispatch => {
       case 'SPORTS':
         return {
           proposition: 'A lovely sports 3 pack!',
-          context
+          context // *** Noteworthy
         };
       case 'CINEMA':
         return {
           proposition: 'Stunning Sky Cinema in full glory!',
-          context
+          context // *** Noteworthy
         }
       default:
         throw new Error('Unknown context supplied to fetchProposition');
