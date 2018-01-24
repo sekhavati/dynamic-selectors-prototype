@@ -7,20 +7,20 @@ import {
 const fetchProposition = context => dispatch => {
   Promise.resolve(dispatch({ type: FETCH_PROPOSITION }))
   .then(() => {
-      switch(context) {
-        case 'SPORTS':
-          return {
-            proposition: 'A lovely sports 3 pack!',
-            context
-          };
-        case 'CINEMA':
-          return {
-            proposition: 'Stunning Sky Cinema in full glory!',
-            context
-          }
-        default:
-          throw new Error('Unknown context supplied to fetchProposition');
-      }
+    switch(context) {
+      case 'SPORTS':
+        return {
+          proposition: 'A lovely sports 3 pack!',
+          context
+        };
+      case 'CINEMA':
+        return {
+          proposition: 'Stunning Sky Cinema in full glory!',
+          context
+        }
+      default:
+        throw new Error('Unknown context supplied to fetchProposition');
+    }
   })
   .then(data => {
     dispatch({

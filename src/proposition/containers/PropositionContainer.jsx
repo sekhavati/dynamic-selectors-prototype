@@ -14,7 +14,8 @@ class PropositionContainer extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  content: ownProps.context
+  /** @todo: move below into selector */
+  displayName: state.propositions[ownProps.context]
 });
 
 const mapDispatchToProps = (dispatch, ownProps)  => ({
