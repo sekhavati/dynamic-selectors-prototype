@@ -4,6 +4,7 @@ const getProposition = (state, props) => {
   return { displayName: state.proposition[props.context] };
 };
 
+// *** Noteworthy
 const makeGetProposition = () => {
   return createSelector(
     getProposition,
