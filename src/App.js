@@ -3,9 +3,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import logo from './logo.svg';
 import './App.css';
 import propositionReducer from './proposition/reducers/proposition';
+import PropositionContainer from './proposition/containers/PropositionContainer';
+//import fetchProposition from './proposition/actions/fetch-proposition';
 
 const store = createStore(
   propositionReducer,
@@ -21,12 +22,18 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
+            <h1 className="App-title">Dynamic Selectors Prototype</h1>
           </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
+
+          <div>
+            <h2>First proposition</h2>
+            <PropositionContainer context="SPORTS" />
+          </div>
+          <div>
+            <h2>Second proposition</h2>
+            <PropositionContainer context="CINEMA" />
+          </div>
+
         </div>
       </Provider>
     );

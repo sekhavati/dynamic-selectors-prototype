@@ -2,7 +2,7 @@ import React from 'react';
 
 const Proposition = ({displayName}) => (
   <div>
-    <h1>Congrats, you have the following proposition available</h1>
+    <p>Congrats, you have the following proposition available</p>
     <p>{displayName}</p>
   </div>
 );
