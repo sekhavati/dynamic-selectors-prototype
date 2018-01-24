@@ -9,3 +9,5 @@ const PropositionReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default PropositionReducer;
