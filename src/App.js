@@ -28,6 +28,7 @@ class App extends Component {
             <h1 className="App-title">Dynamic Selectors Prototype</h1>
           </header>
 
+          { /* *** Noteworthy: examples of end-user usage below */ }
           <div>
             <h2>First proposition</h2>
             <PropositionContainer context="SPORTS" />
