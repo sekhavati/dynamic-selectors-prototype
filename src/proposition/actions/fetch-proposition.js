@@ -10,12 +10,12 @@ const fetchProposition = context => dispatch => {
     switch(context) {
       case 'SPORTS':
         return {
-          proposition: 'A lovely sports 3 pack!',
+          proposition: 'A lovely sports package!',
           context // *** Noteworthy - context needs to be passed back for reducer to also be aware
         };
       case 'CINEMA':
         return {
-          proposition: 'Stunning Sky Cinema in full glory!',
+          proposition: 'Stunning Cinema in full glory!',
           context // *** Noteworthy - context needs to be passed back for reducer to also be aware
         };
       default:
