@@ -5,7 +5,7 @@ import {
 } from './action-types';
 
 const fetchProposition = context => dispatch => {
-  Promise.resolve(dispatch({ type: FETCH_PROPOSITION }))
+  return Promise.resolve(dispatch({ type: FETCH_PROPOSITION }))
   .then(() => {
     switch(context) {
       case 'SPORTS':
@@ -17,9 +17,9 @@ const fetchProposition = context => dispatch => {
         return {
           proposition: 'Stunning Sky Cinema in full glory!',
           context // *** Noteworthy
-        }
+        };
       default:
-        throw new Error('Unknown context supplied to fetchProposition');
+        return Promise.reject(`Unknown context (${context}) supplied to fetchProposition`);
     }
   })
   .then(data => {

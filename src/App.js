@@ -36,6 +36,10 @@ class App extends Component {
             <h2>Second proposition</h2>
             <PropositionContainer context="CINEMA" />
           </div>
+          <div>
+            <h2>Unknown proposition</h2>
+            <PropositionContainer context="FOOBAR" />
+          </div>
 
         </div>
       </Provider>
