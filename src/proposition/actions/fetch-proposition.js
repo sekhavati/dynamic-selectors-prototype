@@ -11,12 +11,12 @@ const fetchProposition = context => dispatch => {
       case 'SPORTS':
         return {
           proposition: 'A lovely sports 3 pack!',
-          context // *** Noteworthy
+          context // *** Noteworthy - context needs to be passed back for reducer to also be aware
         };
       case 'CINEMA':
         return {
           proposition: 'Stunning Sky Cinema in full glory!',
-          context // *** Noteworthy
+          context // *** Noteworthy - context needs to be passed back for reducer to also be aware
         };
       default:
         return Promise.reject(`Unknown context (${context}) supplied to fetchProposition`);

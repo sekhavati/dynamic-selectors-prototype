@@ -14,7 +14,7 @@ class PropositionContainer extends React.Component {
   }
 }
 
-// *** Noteworthy
+// *** Noteworthy - normal ms2p is expanded slightly to use selector factory method
 const makeMapStateToProps = (state, ownProps) => {
   const getProposition = makeGetProposition();
   const mapStateToProps = (state, ownProps) => ({
@@ -27,5 +27,4 @@ const mapDispatchToProps = (dispatch, ownProps)  => ({
   fetchPropositionWithContext: () => { dispatch(fetchProposition(ownProps.context)); }
 });
 
-// *** Noteworthy
 export default connect(makeMapStateToProps, mapDispatchToProps)(PropositionContainer);
