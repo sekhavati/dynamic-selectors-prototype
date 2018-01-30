@@ -21,8 +21,6 @@ const fetchProposition = context => dispatch => {
     }
   })
   .then(data => {
-    console.log('***', context);
-
     dispatch({
       type: FETCH_PROPOSITION_SUCCESS,
       data,
