@@ -30,15 +30,15 @@ class App extends Component {
 
           { /* *** Noteworthy: examples of end-user usage below */ }
           <div>
-            <h2>First proposition</h2>
+            <h2>Proposition with SPORTS context</h2>
             <PropositionContainer context="SPORTS" />
           </div>
           <div>
-            <h2>Second proposition</h2>
+            <h2>Proposition with CINEMA context</h2>
             <PropositionContainer context="CINEMA" />
           </div>
           <div>
-            <h2>Unknown proposition</h2>
+            <h2>Proposition with an unknown context</h2>
             <PropositionContainer context="FOOBAR" />
           </div>
 
