@@ -10,22 +10,23 @@ const fetchProposition = context => dispatch => {
     switch(context) {
       case 'SPORTS':
         return {
-          proposition: 'A lovely sports package!',
-          context // *** Noteworthy - context needs to be passed back for reducer to also be aware
+          proposition: 'A lovely sports package!'
         };
       case 'CINEMA':
         return {
-          proposition: 'Stunning Cinema in full glory!',
-          context // *** Noteworthy - context needs to be passed back for reducer to also be aware
+          proposition: 'Stunning Cinema in full glory!'
         };
       default:
         return Promise.reject(`Unknown context (${context}) supplied to fetchProposition`);
     }
   })
   .then(data => {
+    console.log('***', context);
+
     dispatch({
       type: FETCH_PROPOSITION_SUCCESS,
-      data
+      data,
+      context // *** Noteworthy - context needs to be passed back for reducer to also be aware
     });
   })
   .catch(error => {

@@ -5,7 +5,7 @@ const PropositionReducer = (state = {}, action) => {
     case FETCH_PROPOSITION_SUCCESS:
       return {
         ...state,
-        [action.data.context]: action.data.proposition // *** Noteworthy: original context needs to be accessible from action in order to work as intended
+        [action.context]: action.data.proposition // *** Noteworthy: original context needs to be accessible from action in order to work as intended
       }
     default:
       return state;
