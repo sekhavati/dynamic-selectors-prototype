@@ -4,22 +4,24 @@ import {
   FETCH_PROPOSITION_SUCCESS
 } from './action-types';
 
+const fakePropositionRequest = context => {
+  switch(context) {
+    case 'SPORTS':
+      return {
+        proposition: 'A lovely sports package!'
+      };
+    case 'CINEMA':
+      return {
+        proposition: 'Stunning Cinema in full glory!'
+      };
+    default:
+      return Promise.reject(`Unknown context (${context}) supplied to fetchProposition`);
+  }
+};
+
 const fetchProposition = context => dispatch => {
   return Promise.resolve(dispatch({ type: FETCH_PROPOSITION }))
-  .then(() => {
-    switch(context) {
-      case 'SPORTS':
-        return {
-          proposition: 'A lovely sports package!'
-        };
-      case 'CINEMA':
-        return {
-          proposition: 'Stunning Cinema in full glory!'
-        };
-      default:
-        return Promise.reject(`Unknown context (${context}) supplied to fetchProposition`);
-    }
-  })
+  .then(() => fakePropositionRequest(context))
   .then(data => {
     dispatch({
       type: FETCH_PROPOSITION_SUCCESS,
