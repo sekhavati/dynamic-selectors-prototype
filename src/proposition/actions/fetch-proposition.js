@@ -25,8 +25,10 @@ const fetchProposition = context => dispatch => {
   .then(data => {
     dispatch({
       type: FETCH_PROPOSITION_SUCCESS,
-      data,
-      context // *** Noteworthy - context needs to be passed back for reducer to also be aware
+      data: {
+        ...data,
+        context // *** Noteworthy - context needs to be passed back for reducer to also be aware
+      }
     });
   })
   .catch(error => {
