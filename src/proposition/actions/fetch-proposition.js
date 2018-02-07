@@ -20,21 +20,20 @@ const fakePropositionRequest = context => {
 };
 
 const fetchProposition = context => dispatch => {
-  return Promise.resolve(dispatch({ type: FETCH_PROPOSITION }))
+  return Promise.resolve(dispatch({ type: FETCH_PROPOSITION, context }))
   .then(() => fakePropositionRequest(context))
   .then(data => {
     dispatch({
       type: FETCH_PROPOSITION_SUCCESS,
-      data: {
-        ...data,
-        context // *** Noteworthy - context needs to be passed back for reducer to also be aware
-      }
+      data,
+      context // *** Noteworthy - context needs to be passed back for reducer to also be aware
     });
   })
   .catch(error => {
     dispatch({
       type: FETCH_PROPOSITION_ERROR,
-      error: error
+      error,
+      context
     });
     throw error;
   });
